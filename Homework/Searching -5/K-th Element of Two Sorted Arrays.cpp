@@ -20,7 +20,7 @@ int findElems(vector<int> nums, int value) {
     return s;
 }
 
-int findMedian(vector<int> nums1, vector<int> nums2, int k) {
+int findKth(vector<int> nums1, vector<int> nums2, int k) {
     int n = nums1.size();
     int m = nums2.size();
 
@@ -40,5 +40,5 @@ int findMedian(vector<int> nums1, vector<int> nums2, int k) {
 }
 
 int kthElement(vector<int> &arr1, vector<int>& arr2, int n, int m, int k){
-        return findMedian(arr1, arr2, k-1);
+        return findKth(arr1, arr2, k-1);
 }
