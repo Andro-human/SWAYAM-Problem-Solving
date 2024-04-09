@@ -1,11 +1,10 @@
 class Trie {
     int prefixWords;
-    vector<Trie*> children;
-    bool isEnd;
+    Trie* children[26];
 
 public:
-    Trie(): isEnd{false}, prefixWords{0}{
-        children.resize(26, NULL);
+    Trie(): prefixWords{0}{
+        memset(children, NULL, sizeof(children));
     }
 
     void insert(string word) {
@@ -18,8 +17,6 @@ public:
             node = node->children[c-'a'];
             node->prefixWords++;
         }
-
-        node->isEnd = true;
     }
 
     int noOfPrefix(string word) {
